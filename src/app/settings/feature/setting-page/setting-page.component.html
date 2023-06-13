@@ -1,0 +1,29 @@
+<div class="surface-card p-4 shadow-2 border-round h-full lg:w-full w-10 ">
+  <div class="font-medium text-3xl text-900 mb-3">{{'settings'| translate}}</div>
+  <div class="text-500 mb-5">{{"change the look and the feel of your application."| translate}}</div>
+  <ul class="list-none p-0 m-0">
+    <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
+      <div class="text-500 w-6 md:w-2 font-medium">{{'language' | translate}}</div>
+      <div class="text-900 w-full md:w-10 md:flex-order-0 flex-order-1">
+        <p-dropdown styleClass="w-full lg:w-max" [options]="languages" [(ngModel)]="selectedLang"
+                    optionLabel="name"></p-dropdown>
+      </div>
+
+    </li>
+    <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap">
+      <div class="text-500 w-6 md:w-2 font-medium">{{"theme" | translate}}</div>
+      <div class="text-900 w-full md:w-10 md:flex-order-0 flex-order-1">
+        <p-selectButton  styleClass="w-full flex lg:block" [options]="themes" [(ngModel)]="selectedTheme"
+                        optionLabel="label" optionValue="value"></p-selectButton>
+
+      </div>
+
+    </li>
+    <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap flex justify-content-end">
+      <div class="text-500 font-medium w-full flex justify-content-end">
+        <button pButton pRipple [label]="'save changes'|translate" class=" w-full lg:w-auto ml-auto" (click)="saveChanges()"></button>
+      </div>
+    </li>
+
+  </ul>
+</div>
